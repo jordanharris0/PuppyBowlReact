@@ -15,3 +15,24 @@ export async function fetchAllPlayers() {
     console.error("Uh Oh, trouble fetching players!", error);
   }
 }
+
+//add new player to API
+export async function handleSubmit(e, name, breed, imageUrl) {
+  e.preventDefault();
+  try {
+    console.log("here");
+
+    const response = await fetch(API, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, breed, imageUrl }),
+    });
+    const json = await response.json();
+
+    console.log(json);
+  } catch (error) {
+    console.error("Uh Oh, Couldn't new player!");
+  }
+}

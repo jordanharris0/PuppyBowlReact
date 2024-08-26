@@ -1,14 +1,18 @@
-import { useState } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import Main from "./components/MainSection";
+import NewPlayer from "./components/NewPlayerForm";
+import { useState } from "react";
 
 function App() {
+  const [playerAdded, setPlayerAdded] = useState(false);
+
   return (
     <>
       <div>
         <NavBar />
-        <Main />
+        <NewPlayer setPlayerAdded={setPlayerAdded} />
+        <Main playerAdded={playerAdded} setPlayerAdded={setPlayerAdded} />
       </div>
     </>
   );
