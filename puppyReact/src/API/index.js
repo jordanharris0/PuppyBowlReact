@@ -2,14 +2,16 @@
 const API =
   "https://fsa-puppy-bowl.herokuapp.com/api/2407-FTB-ET-WEB-FT/players";
 
-async function AllPlayers() {
+export async function fetchAllPlayers() {
   try {
     const response = await fetch(API);
     const json = await response.json();
-    players = await json.data.players;
+    const players = await json.data.players;
+
+    console.log(players);
 
     return players;
   } catch (error) {
-    console.error("Uh Oh, trouble fetching players!", err);
+    console.error("Uh Oh, trouble fetching players!", error);
   }
 }
