@@ -5,10 +5,12 @@ import NewPlayer from "./components/NewPlayerForm";
 import { useState } from "react";
 
 function App() {
+  // useState for added player form
   const [playerAdded, setPlayerAdded] = useState(false);
 
   return (
     <>
+      {/* react components */}
       <div>
         <NavBar />
         <NewPlayer setPlayerAdded={setPlayerAdded} />

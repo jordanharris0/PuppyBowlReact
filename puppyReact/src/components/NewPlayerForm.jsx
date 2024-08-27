@@ -8,8 +8,10 @@ export default function NewPlayer({ setPlayerAdded }) {
 
   return (
     <>
-      <h1>New Player</h1>
+      {/* title */}
+      <h1 id="title">Puppy Bowl</h1>
 
+      {/* rendered new player form */}
       <form
         onSubmit={(e) => {
           handleSubmit(e, name, breed, imageUrl);
@@ -22,6 +24,7 @@ export default function NewPlayer({ setPlayerAdded }) {
         <label>
           Name:{" "}
           <input
+            required
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -30,15 +33,18 @@ export default function NewPlayer({ setPlayerAdded }) {
         <label>
           Breed:{" "}
           <input
+            required
             type="text"
             value={breed}
             onChange={(e) => setBreed(e.target.value)}
           />
         </label>
         <label>
-          Image URL:{" "}
+          Image:{" "}
           <input
+            required
             type="text"
+            placeholder="URL"
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
           />

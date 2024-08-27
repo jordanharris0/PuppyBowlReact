@@ -4,9 +4,11 @@ import AllPlayers from "./AllPlayers";
 import { useState } from "react";
 
 export default function Main({ playerAdded, setPlayerAdded }) {
+  // single player useState
   const [singlePlayer, setSinglePlayer] = useState(null);
   return (
     <main>
+      {/* routes for single and AllPlayers components */}
       <Routes>
         <Route
           path="/"

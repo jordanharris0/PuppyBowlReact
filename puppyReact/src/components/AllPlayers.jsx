@@ -37,6 +37,7 @@ export default function AllPlayers({
 
   return (
     <>
+      {/* rendered search bar */}
       <div className="search">
         <label>
           Search:{" "}
@@ -48,6 +49,7 @@ export default function AllPlayers({
         </label>
       </div>
 
+      {/* rendered player cards */}
       <div id="mainSection">
         {playersToDisplay.map((player) => {
           return (
